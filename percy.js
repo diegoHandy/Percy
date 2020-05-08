@@ -35,7 +35,7 @@ PercyScript.run(async (page, percySnapshot) => {
   let urls = ['https://www.handy.la/precios'];
   for (let url of urls) {
     await page.goto(url);
-    await page.evaluate(scrollToBottom, { frequency: 100, timing: 70 });
+    await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
     await percySnapshot('Precios');
   }
 
