@@ -20,6 +20,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm i scroll-to-bottom
+    - run: npx percy exec -- node percy.js
       env:
           PERCY_TOKEN: 073dadb38823718b36e87cae3d721bf7640b528dae6682a64649f416396a08c1
-    - run: npx percy exec -- node percy.js
