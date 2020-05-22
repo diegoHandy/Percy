@@ -19,7 +19,7 @@ PercyScript.run(async (page, percySnapshot) => {
 
   await page.goto('https://www.handy.la/preventa');
   await page.evaluate(scrollToBottom);
-  await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
+  await page.evaluate(scrollToBottom, { frequency: 98, timing: 30 });
   await percySnapshot('preventa');
 
   await page.goto('https://www.handy.la/promotoria');
