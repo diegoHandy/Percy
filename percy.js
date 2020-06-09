@@ -42,7 +42,7 @@ PercyScript.run(async (page, percySnapshot) => {
   await page.goto('https://www.handy.la/reparto-preventa');
   await page.evaluate(scrollToBottom);
   await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
-  await percySnapshot('promotoria');
+  await percySnapshot('reparto-preventa');
 
   
 });
