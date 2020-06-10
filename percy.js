@@ -8,38 +8,38 @@ const PercyScript = require('@percy/script');
 PercyScript.run(async (page, percySnapshot) => {
   
 
-  await page.goto('https://www.handy.la/');
+  await page.goto('https://handy-new.webflow.io/');
   await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
   await percySnapshot('Home');
 
   
-  await page.goto('https://www.handy.la/funcionalidades');
+  await page.goto('https://handy-new.webflow.io/funcionalidades');
   await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
   await percySnapshot('funcionalidades');
 
-  await page.goto('https://www.handy.la/preventa');
+  await page.goto('https://handy-new.webflow.io/preventa');
   await page.evaluate(scrollToBottom);
   await page.evaluate(scrollToBottom, { frequency: 98, timing: 30 });
   await percySnapshot('preventa');
 
-  await page.goto('https://www.handy.la/promotoria');
+  await page.goto('https://handy-new.webflow.io/promotoria');
   await page.evaluate(scrollToBottom);
   await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
   await percySnapshot('promotoria');
 
-  await page.goto('https://www.handy.la/venta-en-ruta');
+  await page.goto('https://handy-new.webflow.io/venta-en-ruta');
   await page.evaluate(scrollToBottom);
   await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
   await percySnapshot('VentaRuta');
 
-  let urls = ['https://www.handy.la/precios'];
+  let urls = ['https://handy-new.webflow.io/precios'];
   for (let url of urls) {
     await page.goto(url);
     await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
     await percySnapshot('Precios');
   }
   
-  await page.goto('https://www.handy.la/reparto-preventa');
+  await page.goto('https://handy-new.webflow.io/reparto-preventa');
   await page.evaluate(scrollToBottom);
   await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
   await percySnapshot('reparto-preventa');
