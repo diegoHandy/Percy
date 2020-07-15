@@ -43,6 +43,12 @@ PercyScript.run(async (page, percySnapshot) => {
   await page.evaluate(scrollToBottom);
   await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
   await percySnapshot('reparto-preventa');
+  
+  
+  await page.goto('https://handy-new.webflow.io/academia-handy');
+  await page.evaluate(scrollToBottom);
+  await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
+  await percySnapshot('Academia Handy');
 
   
 });
