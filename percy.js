@@ -3,52 +3,54 @@ let scrollToBottom = require("scroll-to-bottomjs");
 
 const PercyScript = require('@percy/script');
 
-
 // A script to navigate our app and take snapshots with Percy.
 PercyScript.run(async (page, percySnapshot) => {
   
-
-  await page.goto('https://handy-new.webflow.io/');
-  await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
+  await page.goto('https://www.handy.la/');
+  await page.evaluate(scrollToBottom, { frequency: 100, timing: 70 });
   await percySnapshot('Home');
 
   
-  await page.goto('https://handy-new.webflow.io/funcionalidades');
-  await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
+  await page.goto('https://www.handy.la/funcionalidades');
+  await page.evaluate(scrollToBottom, { frequency: 100, timing: 70 });
   await percySnapshot('funcionalidades');
 
-  await page.goto('https://handy-new.webflow.io/preventa');
+  await page.goto('https://www.handy.la/preventa');
   await page.evaluate(scrollToBottom);
-  await page.evaluate(scrollToBottom, { frequency: 98, timing: 30 });
+  await page.evaluate(scrollToBottom, { frequency: 100, timing: 70 });
   await percySnapshot('preventa');
 
-  await page.goto('https://handy-new.webflow.io/promotoria');
+  await page.goto('https://www.handy.la/venta-en-ruta');
   await page.evaluate(scrollToBottom);
-  await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
-  await percySnapshot('promotoria');
-
-  await page.goto('https://handy-new.webflow.io/venta-en-ruta');
-  await page.evaluate(scrollToBottom);
-  await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
+  await page.evaluate(scrollToBottom, { frequency: 100, timing: 70 });
   await percySnapshot('VentaRuta');
 
-  let urls = ['https://handy-new.webflow.io/precios'];
+  await page.goto('https://www.handy.la/reparto-preventa');
+  await page.evaluate(scrollToBottom);
+  await page.evaluate(scrollToBottom, { frequency: 100, timing: 70 });
+  await percySnapshot('Reparto');
+
+  await page.goto('https://www.handy.la/integraciones');
+  await page.evaluate(scrollToBottom);
+  await page.evaluate(scrollToBottom, { frequency: 100, timing: 70 });
+  await percySnapshot('Integraciones');
+
+  await page.goto('https://www.handy.la/academia-handy');
+  await page.evaluate(scrollToBottom);
+  await page.evaluate(scrollToBottom, { frequency: 100, timing: 70 });
+  await percySnapshot('Academia');
+
+  await page.goto('https://www.handy.la/taller-arranque');
+  await page.evaluate(scrollToBottom);
+  await page.evaluate(scrollToBottom, { frequency: 100, timing: 70 });
+  await percySnapshot('Taller');
+
+  let urls = ['https://www.handy.la/precios'];
   for (let url of urls) {
     await page.goto(url);
-    await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
+    await page.evaluate(scrollToBottom, { frequency: 100, timing: 70 });
     await percySnapshot('Precios');
   }
   
-  await page.goto('https://handy-new.webflow.io/reparto-preventa');
-  await page.evaluate(scrollToBottom);
-  await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
-  await percySnapshot('reparto-preventa');
-  
-  
-  await page.goto('https://handy-new.webflow.io/academia-handy');
-  await page.evaluate(scrollToBottom);
-  await page.evaluate(scrollToBottom, { frequency: 99, timing: 30 });
-  await percySnapshot('Academia Handy');
-
-  
 });
+
